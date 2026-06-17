@@ -1,0 +1,166 @@
+# 🍕 Pizzaria Web - Sistema Completo
+
+**Desenvolvido por:** João Arantes  
+**Curso:** Análise e Desenvolvimento de Sistemas - Faculdade INSTED  
+**Disciplina:** Desenvolvimento Web Full Stack  
+**Entrega:** 19/06/2026
+
+---
+
+## Sobre o Projeto
+
+Sistema web completo para uma pizzaria, desenvolvido com **HTML5, CSS3, JavaScript, PHP e MySQL**. O sistema conta com um site institucional para os clientes e um painel administrativo para gerenciar pedidos, mensagens e o cardápio.
+
+---
+
+## Tecnologias Utilizadas
+
+| Tecnologia | Uso |
+|------------|-----|
+| HTML5 | Estrutura das páginas |
+| CSS3 | Estilização e responsividade |
+| JavaScript | Validação de formulários no front-end |
+| PHP | Back-end e processamento dos formulários |
+| MySQL | Banco de dados |
+| PDO | Conexão segura com o banco |
+
+---
+
+## Funcionalidades
+
+### Site (cliente)
+- Página inicial com hero, promoções e destaques
+- Página Sobre com história e estatísticas
+- Cardápio dinâmico carregado do banco de dados
+- Formulário de pedido com validação JS e PHP
+- Formulário de contato com validação JS e PHP
+- Cadastro e login de usuários
+- Sessão de usuário logado
+
+### Painel Administrativo
+- Login exclusivo para administradores
+- Dashboard com pedidos do dia, faturamento e mensagens não lidas
+- Tabela de pedidos recentes em tempo real
+- Tabela de mensagens de contato
+- Gerenciamento completo do cardápio (adicionar, editar, excluir pizzas e preços)
+
+---
+
+## Como Rodar o Projeto
+
+### Windows (XAMPP)
+
+1. Instale o [XAMPP](https://www.apachefriends.org/)
+2. Copie a pasta `Pizzaria Web` para `C:\xampp\htdocs\Pizzaria Web`
+3. Abra o **XAMPP Control Panel** e inicie **Apache** e **MySQL**
+4. Acesse `http://localhost/phpmyadmin`
+5. Clique em **Novo** → crie um banco chamado `pizzaria`
+6. Clique no banco `pizzaria` → **Importar** → selecione `database/banco.sql` → **Executar**
+7. Acesse o site: `http://localhost/Pizzaria%20Web`
+
+> **Senha do banco:** No XAMPP a senha do root é vazia por padrão. Se precisar alterar, edite a variável `$senha` no arquivo `includes/conexao.php`.
+
+---
+
+### Linux (Zorin OS / Ubuntu)
+
+```bash
+# Instalar dependências
+sudo apt install apache2 php libapache2-mod-php php-mysql mysql-server phpmyadmin -y
+
+# Configurar senha do MySQL
+sudo mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456'; FLUSH PRIVILEGES;"
+
+# Copiar projeto
+sudo cp -r ~/Documentos/'Pizzaria Web' /var/www/html/'Pizzaria Web'
+
+# Importar banco
+sudo mysql -u root -p < ~/Documentos/'Pizzaria Web'/database/banco.sql
+# (senha: 123456)
+
+# Acessar
+# Site: http://localhost/Pizzaria%20Web
+# phpMyAdmin: http://localhost/phpmyadmin
+```
+
+> **Atenção:** No arquivo `includes/conexao.php` a senha está configurada como `123456`. Se usar senha diferente, atualize essa variável.
+
+---
+
+## Acessos do Sistema
+
+| Tipo | URL | E-mail | Senha |
+|------|-----|--------|-------|
+| Site | `localhost/Pizzaria%20Web` | — | — |
+| Login Cliente | `localhost/Pizzaria%20Web/login.php` | joao@email.com | password |
+| Painel Admin | `localhost/Pizzaria%20Web/admin/login.php` | admin@pizzaria.com | password |
+| phpMyAdmin | `localhost/phpmyadmin` | root | 123456 |
+
+---
+
+## Estrutura de Pastas
+
+```
+Pizzaria Web/
+│
+├── admin/
+│   ├── cardapio.php        Gerenciar pizzas e preços
+│   ├── index.php           Dashboard principal
+│   ├── login.php           Login do administrador
+│   ├── logout.php          Encerrar sessão
+│   └── stats.php           Estatísticas
+│
+├── CSS/
+│   └── style.css           Estilos globais do projeto
+│
+├── database/
+│   └── banco.sql           Script completo do banco de dados
+│
+├── IMG/                    Imagens do projeto
+│
+├── includes/
+│   ├── conexao.php         Conexão PDO com o MySQL
+│   ├── footer.php          Rodapé e scripts
+│   └── header.php          Cabeçalho e navegação
+│
+├── JS/
+│   └── main.js             validação de formulários
+│
+├── process/
+│   ├── cadastro.php        Registra novo usuário
+│   ├── contato.php         Salva mensagem no banco
+│   ├── login.php           Autentica o usuário
+│   ├── logout.php          Encerra sessão
+│   └── pedido.php          Salva pedido no banco
+│
+├── cadastro.php            Cadastro de novo cliente
+├── cardapio.php            Cardápio dinâmico
+├── contato.php             Formulário de contato
+├── index.php               Página inicial
+├── login.php               Login do cliente
+├── pedidos.php             Formulário de pedido
+├── sobre.php               Página sobre a pizzaria
+└── README.md               Este arquivo
+```
+
+---
+
+## Banco de Dados
+
+O banco `pizzaria` contém as seguintes tabelas:
+
+| Tabela | Descrição |
+|--------|-----------|
+| `usuarios` | Clientes e administradores cadastrados |
+| `enderecos` | Endereços vinculados aos usuários |
+| `cardapio` | Pizzas com nome, descrição, preço e imagem |
+| `pedidos` | Pedidos realizados pelos clientes |
+
+---
+
+## Segurança
+
+- Validação de dados no front-end (JavaScript) e no back-end (PHP)
+- Controle de acesso por sessão PHP
+- Painel admin inacessível sem login de administrador
+
