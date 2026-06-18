@@ -19,7 +19,7 @@ $tipo   = $_SESSION['usuario_tipo'] ?? '';
 <header class="site-header">
     <div class="container">
         <div class="header-inner">
-            <a href="index.php" class="logo-text">Arantes <span>Pizzaria</span></a>
+            <a href="index.php" class="logo-text">Pizzaria da <span>Suzy</span></a>
 
             <div class="nav-wrapper" id="navWrapper">
                 <ul class="nav-list">
