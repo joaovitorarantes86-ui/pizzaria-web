@@ -38,6 +38,7 @@ include 'includes/cabecalho.php';
 <section class="cardapio-section">
     <div class="container">
         <div class="section-header">
+            <span class="section-tag">&#127829; Sabores especiais</span>
             <h2>Nosso <span>Cardápio</span></h2>
             <p>Pizzas artesanais feitas com amor e ingredientes selecionados</p>
         </div>
@@ -51,6 +52,10 @@ include 'includes/cabecalho.php';
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="Buscar pizza..." autocomplete="off">
             </div>
+        </div>
+
+        <div class="cardapio-promessa">
+            <p>Massa fermentada por 48h &bull; Forno a lenha &bull; Ingredientes frescos</p>
         </div>
 
         <div class="menu-grid" id="menuGrid">
