@@ -1,0 +1,20 @@
+# OS
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# PHP
+*.log
+
+# Uploads (keep folder but not files)
+uploads/*
+!uploads/.gitkeep
+
+# Env
+.env
