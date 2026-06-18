@@ -486,7 +486,7 @@ section { padding: 72px 0; }
 
 /* ===== CARDÁPIO ===== */
 .cardapio-section {
-  background: var(--gray-50);
+  background: var(--white);
 }
 
 /* filtros e busca */
@@ -674,29 +674,24 @@ section { padding: 72px 0; }
 .btn-menu-order {
   padding: 9px 22px;
   border-radius: var(--radius-lg);
-  background: var(--gold);
-  color: var(--navy-dark);
+  background: var(--navy);
+  color: var(--white);
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.2s;
 }
 .btn-menu-order:hover {
-  background: var(--gold-light);
-  transform: translateY(-1px);
+  background: var(--navy-light);
 }
 
 .cardapio-promessa {
   text-align: center;
-  margin: -20px auto 36px;
+  margin: -16px auto 36px;
   font-size: 0.88rem;
   color: var(--text-light);
   letter-spacing: 0.02em;
-  background: var(--cream);
-  padding: 10px 28px;
-  border-radius: var(--radius-xl);
-  width: fit-content;
 }
 
 .cardapio-empty {
