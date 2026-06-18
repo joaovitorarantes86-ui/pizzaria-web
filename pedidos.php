@@ -10,9 +10,17 @@ unset($_SESSION['pedido_sucesso'], $_SESSION['pedido_erros'], $_SESSION['pedido_
 
 try {
     require_once 'includes/conexao.php';
-    $pizzas_db = $pdo->query("SELECT nome, preco FROM cardapio WHERE ativo = 1 ORDER BY nome")->fetchAll();
+    $pizzas_db = $pdo->query("SELECT id, nome, preco FROM cardapio WHERE ativo = 1 ORDER BY nome")->fetchAll();
+
+    $enderecos = [];
+    if (isset($_SESSION['usuario_id'])) {
+        $stmt = $pdo->prepare("SELECT * FROM enderecos WHERE usuario_id = ? ORDER BY id DESC");
+        $stmt->execute([$_SESSION['usuario_id']]);
+        $enderecos = $stmt->fetchAll();
+    }
 } catch (Exception $e) {
     $pizzas_db = [];
+    $enderecos = [];
 }
 
 include 'includes/cabecalho.php';
@@ -45,7 +53,7 @@ include 'includes/cabecalho.php';
                     <div class="form-group">
                         <label for="nome">Nome completo *</label>
                         <input type="text" id="nome" name="nome" required
-                               value="<?= htmlspecialchars($dados['nome'] ?? '') ?>"
+                               value="<?= htmlspecialchars($dados['nome'] ?? $_SESSION['usuario_nome'] ?? '') ?>"
                                placeholder="Seu nome">
                         <span class="form-error"></span>
                     </div>
@@ -97,6 +105,29 @@ include 'includes/cabecalho.php';
                     </div>
                 </div>
 
+                <?php if (!empty($enderecos)): ?>
+                <div class="form-group">
+                    <label>Endereço salvo</label>
+                    <?php foreach ($enderecos as $e): ?>
+                    <label style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;margin-bottom:8px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);cursor:pointer;transition:border-color 0.2s;font-weight:400;font-size:0.88rem;" class="endereco-option">
+                        <input type="radio" name="endereco_id" value="<?= $e['id'] ?>" style="margin-top:3px;accent-color:var(--gold);"
+                               onchange="usarEndereco(<?= $e['id'] ?>)">
+                        <span>
+                            <strong><?= htmlspecialchars($e['rua']) ?>, <?= htmlspecialchars($e['numero']) ?></strong>
+                            <?= htmlspecialchars($e['bairro']) ?> - <?= htmlspecialchars($e['cidade']) ?>
+                            <?php if ($e['complemento']): ?> | <?= htmlspecialchars($e['complemento']) ?><?php endif; ?>
+                            <br><small style="color:var(--text-light);">CEP: <?= htmlspecialchars($e['cep']) ?></small>
+                        </span>
+                    </label>
+                    <?php endforeach; ?>
+                    <label style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:0.85rem;cursor:pointer;color:var(--text-light);">
+                        <input type="radio" name="endereco_id" value="" checked style="accent-color:var(--gold);"
+                               onchange="document.getElementById('endereco').value='';document.getElementById('cep').value='';document.getElementById('endereco').focus()">
+                        Usar outro endereço
+                    </label>
+                </div>
+                <?php endif; ?>
+
                 <div class="form-group">
                     <label for="endereco">Endereço de entrega *</label>
                     <input type="text" id="endereco" name="endereco" required
@@ -139,5 +170,21 @@ include 'includes/cabecalho.php';
         </div>
     </div>
 </section>
+
+<?php if (!empty($enderecos)): ?>
+<script>
+var enderecos = <?= json_encode($enderecos) ?>;
+
+function usarEndereco(id) {
+    var e = enderecos.find(function(e) { return e.id == id; });
+    if (e) {
+        var parts = [e.rua + ', ' + e.numero, e.bairro, e.cidade];
+        if (e.complemento) parts.push(e.complemento);
+        document.getElementById('endereco').value = parts.join(' - ');
+        document.getElementById('cep').value = e.cep;
+    }
+}
+</script>
+<?php endif; ?>
 
 <?php include 'includes/rodape.php'; ?>

@@ -28,6 +28,9 @@ $tipo   = $_SESSION['usuario_tipo'] ?? '';
                     <li><a href="cardapio.php" <?= basename($_SERVER['PHP_SELF']) == 'cardapio.php' ? 'class="ativo"' : '' ?>>Cardápio</a></li>
                     <li><a href="pedidos.php" <?= basename($_SERVER['PHP_SELF']) == 'pedidos.php' ? 'class="ativo"' : '' ?>>Pedidos</a></li>
                     <li><a href="contato.php" <?= basename($_SERVER['PHP_SELF']) == 'contato.php' ? 'class="ativo"' : '' ?>>Contato</a></li>
+                    <?php if ($logado): ?>
+                    <li><a href="enderecos.php" <?= basename($_SERVER['PHP_SELF']) == 'enderecos.php' ? 'class="ativo"' : '' ?>>Endereços</a></li>
+                    <?php endif; ?>
                 </ul>
 
                 <div class="nav-action">
