@@ -218,11 +218,14 @@ img { max-width: 100%; display: block; }
   font-family: 'Inter', sans-serif;
 }
 .nav-btn-entrar {
-  background: var(--gold);
-  color: var(--navy-dark);
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.25);
 }
 .nav-btn-entrar:hover {
-  background: var(--gold-light);
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(245,166,35,0.08);
 }
 
 .nav-btn-sair {

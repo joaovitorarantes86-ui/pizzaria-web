@@ -38,7 +38,7 @@ include 'includes/cabecalho.php';
 <section class="cardapio-section">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">&#127829; Sabores especiais</span>
+            <span class="section-tag">Sabores especiais</span>
             <h2>Nosso <span>Cardápio</span></h2>
             <p>Pizzas artesanais feitas com amor e ingredientes selecionados</p>
         </div>
