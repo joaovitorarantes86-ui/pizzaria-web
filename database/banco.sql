@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS mensagens (
 -- usuarios padrao (senha: password)
 INSERT INTO usuarios (nome, email, senha, tipo) VALUES
 ('Admin', 'admin@pizzaria.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin'),
-('Inácio Arantes', 'inacio@email.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'cliente');
+('Inácio Suzy', 'inacio@email.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'cliente');
 
 -- cardapio inicial
 INSERT INTO cardapio (nome, descricao, preco, imagem) VALUES

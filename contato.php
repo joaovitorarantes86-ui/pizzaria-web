@@ -35,7 +35,7 @@ include 'includes/cabecalho.php';
                 </div>
                 <div class="contato-detail">
                     <span class="contato-icon">&#9993;</span>
-                    <span>contato@inaciopizzaria.com.br</span>
+                    <span>contato@pizzariadasuzy.com.br</span>
                 </div>
                 <div class="contato-detail">
                     <span class="contato-icon">&#128338;</span>

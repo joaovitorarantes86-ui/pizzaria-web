@@ -12,7 +12,7 @@ $tipo   = $_SESSION['usuario_tipo'] ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/estilo.css">
-    <title><?= isset($titulo) ? $titulo . ' - Arantes Pizzaria' : 'Arantes Pizzaria' ?></title>
+    <title><?= isset($titulo) ? $titulo . ' - Pizzaria da Suzy' : 'Pizzaria da Suzy' ?></title>
 </head>
 <body>
 

@@ -140,7 +140,7 @@ $pizzas = $pdo->query("SELECT * FROM cardapio ORDER BY id")->fetchAll();
 
     <aside class="admin-sidebar">
         <div class="logo-text">
-            Arantes <span>Pizzaria</span>
+            Pizzaria da <span>Suzy</span>
             <small>Painel Admin</small>
         </div>
         <button class="menu-toggle" id="adminMenuToggle" aria-label="Abrir menu" style="margin:0 12px 16px; display:none;">

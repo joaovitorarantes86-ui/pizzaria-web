@@ -4,7 +4,7 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
-                <a href="index.php" class="logo-text">Arantes <span>Pizzaria</span></a>
+                <a href="index.php" class="logo-text">Pizzaria da <span>Suzy</span></a>
                 <p>Tradição italiana desde 2010. Massa fermentada por 48h, forno a lenha e ingredientes frescos. A verdadeira pizza artesanal de Campo Grande.</p>
             </div>
             <div class="footer-col">
@@ -27,7 +27,7 @@
                 <h4>Contato</h4>
                 <p>(67) 3333-4444</p>
                 <p>(67) 99999-8888</p>
-                <p>contato@inaciopizzaria.com.br</p>
+                <p>contato@pizzariadasuzy.com.br</p>
             </div>
             <div class="footer-col">
                 <h4>Redes</h4>
@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Arantes Pizzaria. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Pizzaria da Suzy. Todos os direitos reservados.</p>
         </div>
     </div>
 </footer>
