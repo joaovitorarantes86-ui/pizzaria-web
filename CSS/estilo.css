@@ -174,7 +174,9 @@ img { max-width: 100%; display: block; }
 .nav-wrapper {
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 0;
 }
 
 .nav-list {
@@ -205,7 +207,6 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-left: auto;
   flex-shrink: 0;
 }
 
