@@ -53,8 +53,8 @@ http://localhost/pizzaria-web
 
 | Tipo | URL | E-mail | Senha |
 |------|-----|--------|-------|
-| Login Cliente | `/login.php` | joao@email.com | password |
-| Painel Admin | `/admin/login.php` | inacio@email.com | password |
+| Login Cliente | `/login.php` | inacio@email.com | password |
+| Painel Admin | `/admin/login.php` | admin@pizzaria.com | password |
 
 ---
 

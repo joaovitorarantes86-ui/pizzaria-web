@@ -39,7 +39,7 @@ unset($_SESSION['login_erros'], $_SESSION['login_email']);
             <label for="email">E-mail *</label>
             <input type="email" id="email" name="email" required data-val="email"
                    value="<?= htmlspecialchars($email) ?>"
-                   placeholder="inacio@email.com">
+                   placeholder="admin@pizzaria.com">
             <span class="form-error"></span>
         </div>
         <div class="form-group">
