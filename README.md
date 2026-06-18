@@ -87,4 +87,4 @@ pizzaria-web/
 - **MySQL 8.0**
 - **HTML5 / CSS3** com design responsivo
 - **JavaScript** puro (validação e interação)
-- **Paleta de cores** inspirada em pizzaria (navy, gold, cream, tomato, basil)
+
