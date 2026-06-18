@@ -229,11 +229,12 @@ img { max-width: 100%; display: block; }
 }
 
 .nav-btn-sair {
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.7);
+  background: rgba(211,47,47,0.15);
+  color: var(--tomato-light);
+  border: 1px solid rgba(211,47,47,0.3);
 }
 .nav-btn-sair:hover {
-  background: rgba(255,255,255,0.15);
+  background: var(--tomato);
   color: var(--white);
 }
 
