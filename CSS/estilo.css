@@ -205,6 +205,8 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .nav-btn {
