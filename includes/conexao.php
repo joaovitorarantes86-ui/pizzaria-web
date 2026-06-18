@@ -3,7 +3,7 @@
 $host    = 'localhost';
 $banco   = 'pizzaria';
 $usuario = 'root';
-$senha   = '123456';
+$senha   = '';
 
 try {
     // conexao pdo com mysql
